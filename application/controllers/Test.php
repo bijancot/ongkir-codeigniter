@@ -22,6 +22,7 @@ class Test extends CI_Controller {
 	{
         $this->load->view('welcome_message');
         $this->load->library('ongkir');
-        echo $this->ongkir->test();
+        $res = $this->ongkir->test();
+        var_dump($res);
 	}
 }
