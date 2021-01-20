@@ -44,19 +44,19 @@ class Ongkir
     }
 
 
-    public function postQuery()
+    public function postQuery($url,$origin,$destination,$weight,$courier)
     {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://ruangapi.com/api/v1/shipping",
+        CURLOPT_URL => "$url",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "origin=22&destination=14&weight=800&courier=sicepat",
+        CURLOPT_POSTFIELDS => "origin=$origin&destination=$destination&weight=$weight&courier=$courier",
         CURLOPT_HTTPHEADER => array(
             "authorization: $this->apikey",
         ),
@@ -67,7 +67,7 @@ class Ongkir
 
         curl_close($curl);
         $data = json_decode($response, true);
-        return $data['data'];
+        return $data['data']['results'];
     }
 
     public function getAllProvinces()
@@ -78,17 +78,19 @@ class Ongkir
         return $result;
     }
 
-    public function getAllCities()
+    public function getCities($provinceId)
     {
         $param = $this->getEndpoint("cities");
+        $param = $param."?provinces=".$provinceId;
         $result = $this->mainQuery($param);
 
         return $result;
     }
 
-    public function getAllDistricts()
+    public function getDistricts($cityId)
     {
         $param = $this->getEndpoint("districts");
+        $param = $param."?city=".$cityId;
         $result = $this->mainQuery($param);
 
         return $result;
@@ -103,21 +105,11 @@ class Ongkir
         return $result;
     }
 
-    public function getCityById($citiesId)
+    public function getCourierPrice($origin,$destination,$weight,$courier)
     {
-        $param = $this->getEndpoint("cities");
-        $param = $param."?id=".$citiesId;
-        $result = $this->mainQuery($param);
-
-        return $result;
-    }
-
-    public function getDistricsById($districsId)
-    {
-        $param = $this->getEndpoint("provinces");
-        $param = $param."?id=".$provinceId;
-        $result = $this->mainQuery($param);
-
+        $param = $this->getEndpoint("shipping");
+        $result = $this->postQuery($param,$origin,$destination,$weight,$courier);
+        
         return $result;
     }
 }
