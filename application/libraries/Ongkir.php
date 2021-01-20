@@ -65,7 +65,7 @@ class Ongkir
 
         curl_close($curl);
         $data = json_decode($response, true);
-        return $data['data']['query'];
+        return $data['data'];
     }
 
     public function getAllProvinces()
