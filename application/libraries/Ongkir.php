@@ -1,6 +1,13 @@
 <?php
 class Ongkir {
 
+    public $endpoint,$apiKey;
+
+    public function __construct() {
+    $this->endpoint = "https://ruangapi.com/api/v1/";
+    $this->apikey = "tgdE2vHA696lTUUSyA3OA90HYNuVpuoRTerQkOoR";
+    }
+
    function test()
   {
     $curl = curl_init();
@@ -15,7 +22,7 @@ class Ongkir {
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => array(
             "accept: application/json",
-            "authorization: tgdE2vHA696lTUUSyA3OA90HYNuVpuoRTerQkOoR",
+            "authorization: $this->apikey",
             "content-type: application/json"
         ),
         ));
@@ -24,8 +31,21 @@ class Ongkir {
         $err = curl_error($curl);
 
         curl_close($curl);
-	$data = json_decode($response, true);
+	      $data = json_decode($response, true);
         return $data['data']['results'];
   } 
+
+  function getEndpoint($param){
+    $end = $this->endpoint;
+    return $end.$param;
+  }
+
+  function mainQuery($param){
+
+  }
+
+  function getAllProvinces(){
+    echo getEndpoint("provinces");
+  }
 }
 ?>

@@ -22,7 +22,7 @@ class Test extends CI_Controller {
 	{
         $this->load->view('welcome_message');
         $this->load->library('ongkir');
-        $res = $this->ongkir->test();
+        $res = $this->ongkir->getAllProvinces();
         ////$has = json_decode($res);
 	//echo $res[0][0];
 	print_r($res);
