@@ -26,7 +26,8 @@ class Test extends CI_Controller {
         ////$has = json_decode($res);
 	//echo $res[0][0];
 	foreach($res as $row){
-		var_dump($row);
+		echo $row['id']." - ". $row['name']." - ".$row['code'];
+
 	}
 	}
 }
