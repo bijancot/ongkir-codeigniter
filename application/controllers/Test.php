@@ -40,7 +40,7 @@ class Test extends CI_Controller {
 		echo "It Will Return all province in indonesia<br/><br/>";
 		var_dump($res1);
 		
-		echo "This is output of <em>getProvinceById(\$param\ <strong>String</strong>)</em><br/>";
+		echo "<br/><br/><br/>This is output of <em>getProvinceById(\$param\ <strong>String</strong>)</em><br/>";
 		echo "It Will Return all province in indonesia<br/>";
 		echo "<em>\$param -> String value of province id -> the value for this one is \"11\"</em><br/><br/>";
 		var_dump($res2);
