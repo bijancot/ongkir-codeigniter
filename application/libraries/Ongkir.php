@@ -35,16 +35,16 @@ class Ongkir {
         return $data['data']['results'];
   } 
 
-  function getEndpoint($param){
+  private function getEndpoint($param){
     $end = $this->endpoint;
     return $end.$param;
   }
 
-  function mainQuery($param){
+  private function mainQuery($param){
 
   }
 
-  function getAllProvinces(){
+  public function getAllProvinces(){
     echo getEndpoint("provinces");
   }
 }
