@@ -20,14 +20,10 @@ class Test extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->view('welcome_message');
+        $this->load->view('testing');
         $this->load->library('ongkir');
-        $res = $this->ongkir->getAllProvinces();
-        ////$has = json_decode($res);
-	//echo $res[0][0];
-	foreach($res as $row){
-		echo $row['id']." - ". $row['name']." - ".$row['code'];
-
-	}
+		$res = $this->ongkir->getAllProvinces();
+		
+		var_dump($res);
 	}
 }
