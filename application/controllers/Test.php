@@ -26,6 +26,8 @@ class Test extends CI_Controller {
 		//call getProvinceById();
 		$res = $this->ongkir->postQuery();
 
+		$res = $this->ongkir->getCityById();
+
 		//test the output		
 		echo "<br/>";
 		var_dump($res);

@@ -106,7 +106,7 @@ class Ongkir
     public function getCityById($citiesId)
     {
         $param = $this->getEndpoint("cities");
-        $param = $param."?id=".$provinceId;
+        $param = $param."?id=".$citiesId;
         $result = $this->mainQuery($param);
 
         return $result;
