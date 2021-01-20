@@ -24,12 +24,9 @@ class Test extends CI_Controller {
 		//loading ongkir-library
 		$this->load->library('ongkir');
 		//call getProvinceById();
-		$res = $this->ongkir->getProvinceById('10');
+		$res = $this->ongkir->getProvinceById('11');
 
-		//call getProvinceById();
-		$resAll = $this->ongkir->getAllProvinces();
-		//test the output
-		var_dump($resAll);
+		//test the output		
 		echo "<br/>";
 		var_dump($res);
 	}
