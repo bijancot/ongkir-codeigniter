@@ -25,10 +25,12 @@ class Test extends CI_Controller {
 		$this->load->library('ongkir');
 		//call getProvinceById();
 		$res = $this->ongkir->postQuery();
-
+		$resres = $this->ongkir->getAllCities();
 		$restu = $this->ongkir->getCityById("11");
 
-		//test the output	
+		//test the output
+		var_dump($resres);	
+		echo "<br/><br/>";	
 		var_dump($restu);	
 		echo "<br/><br/>";
 		var_dump($res);
