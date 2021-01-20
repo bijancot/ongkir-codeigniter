@@ -87,7 +87,7 @@ class Test extends CI_Controller {
 		echo "<em>\$origin -> String value of city id -> the value for this one is \"22\"</em><br/>";
 		echo "<em>\$destination -> String value of district id -> the value for this one is \"3611\"</em><br/>";
 		echo "<em>\$weight -> int|bigint|sting value of weight -> the value for this one is \"2000\"</em><br/>";
-		echo "<em>\$courier -> String value of courier code -> the value for this one is \"sicepat\"</em><br/>";
+		echo "<em>\$courier -> String value of courier code -> the value for this one is \"sicepat\"</em><br/><br/><br/>";
 		var_dump($res1);
 
 		echo "<br/><br/><br/><em>for courier list you can take a look at https://ruangapi.com/dokumentasi/ongkos-kirim</em><br/>";
