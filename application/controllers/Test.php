@@ -25,6 +25,8 @@ class Test extends CI_Controller {
         $res = $this->ongkir->getAllProvinces();
         ////$has = json_decode($res);
 	//echo $res[0][0];
-	print_r($res);
+	foreach($res as $row){
+		var_dump($row);
+	}
 	}
 }
