@@ -22,8 +22,7 @@ class Test extends CI_Controller {
 	{
         $this->load->view('testing');
         $this->load->library('ongkir');
-		$res = $this->ongkir->getAllProvinces();
-		
-		var_dump($res);
+		$res = $this->ongkir->getProvinceById('10');
+
 	}
 }
