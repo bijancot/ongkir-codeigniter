@@ -45,7 +45,7 @@ class Ongkir {
   }
 
   public function getAllProvinces(){
-    echo getEndpoint("provinces");
+    echo $this->getEndpoint("provinces");
   }
 }
 ?>
