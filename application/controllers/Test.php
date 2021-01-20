@@ -20,9 +20,13 @@ class Test extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->view('testing');
-        $this->load->library('ongkir');
+		$this->load->view('testing');
+		//loading ongkir-library
+		$this->load->library('ongkir');
+		//call getProvinceById();
 		$res = $this->ongkir->getProvinceById('10');
 
+		//test the output
+		var_dump($res);
 	}
 }
