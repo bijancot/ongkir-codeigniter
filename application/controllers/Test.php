@@ -5,7 +5,8 @@ class Test extends CI_Controller {
 
 	public function __construct()
     {
-        //loading ongkir-library
+		//loading ongkir-library
+		parent::__construct();
 		$this->load->library("ongkir");
     }
 	/**
