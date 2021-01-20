@@ -6,7 +6,7 @@ class Test extends CI_Controller {
 	public function __construct()
     {
         //loading ongkir-library
-		$this->load->library('ongkir');
+		$this->load->library("ongkir");
     }
 	/**
 	 * Index Page for this controller.
