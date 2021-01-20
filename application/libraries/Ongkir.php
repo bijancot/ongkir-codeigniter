@@ -78,7 +78,7 @@ class Ongkir
         return $result;
     }
 
-    public function getProviceById($provinceId)
+    public function getProvinceById($provinceId)
     {
       $param = $this->getEndpoint("provinces");
       $param = $param."?id=".$provinceId;
