@@ -29,7 +29,7 @@ class Test extends CI_Controller {
 		$restu = $this->ongkir->getCityById("11");
 
 		//test the output	
-		var_dump($res);	
+		var_dump($restu);	
 		echo "<br/><br/>";
 		var_dump($res);
 	}
