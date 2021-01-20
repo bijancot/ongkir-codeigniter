@@ -58,9 +58,7 @@ class Ongkir
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_POSTFIELDS => "origin=22&destination=14&weight=800&courier=jne",
         CURLOPT_HTTPHEADER => array(
-            "accept: application/json",
-            "authorization: $this->apikey",
-            "content-type: application/json"
+            "authorization: $this->apikey"
         ),
         ));
 
