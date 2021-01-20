@@ -31,6 +31,8 @@ class Test extends CI_Controller {
 
 	public function getProvince()
 	{
+		$data['title'] = "library ongkir ruangapi : getProvince()";
+		$this->load->view('testing',$data);
 		$res1 = $this->ongkir->getAllProvinces();
 		$res2 = $this->ongkir->getProvinceById("11");
 
@@ -48,6 +50,8 @@ class Test extends CI_Controller {
 
 	public function getCity()
 	{
+		$data['title'] = "library ongkir ruangapi : getCity()";
+		$this->load->view('testing',$data);
 		$res1 = $this->ongkir->getCities("11");
 		
 		echo "This is output of <em>getCities(\$param\ <strong>String</strong>)</em><br/>";
@@ -60,6 +64,8 @@ class Test extends CI_Controller {
 
 	public function getDistrict()
 	{
+		$data['title'] = "library ongkir ruangapi : getDistrict()";
+		$this->load->view('testing',$data);
 		$res1 = $this->ongkir->getDistricts("255");
 		
 		echo "This is output of <em>getCities(\$param\ <strong>String</strong>)</em><br/>";
@@ -72,6 +78,8 @@ class Test extends CI_Controller {
 
 	public function ongkir()
 	{
+		$data['title'] = "library ongkir ruangapi : ongkir()";
+		$this->load->view('testing',$data);
 		$res1 = $this->ongkir->getCourierPrice("22","3611","2000","sicepat");
 		
 		echo "This is output of <em>getCities(\$origin\ <strong>String</strong>,\$destination\ <strong>String</strong>,\$weight\ <strong>String</strong>,\$courier\ <strong>String</strong>)</em><br/>";
