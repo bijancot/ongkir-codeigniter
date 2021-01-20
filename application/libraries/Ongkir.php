@@ -57,9 +57,7 @@ class Ongkir
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_POSTFIELDS => "origin=22&destination=14&weight=800&courier=sicepat",
-        CURLOPT_HTTPHEADER => array(
-            "authorization: $this->apikey"
-        ),
+        CURLOPT_HTTPHEADER => "authorization: $this->apikey",
         ));
 
         $response = curl_exec($curl);
